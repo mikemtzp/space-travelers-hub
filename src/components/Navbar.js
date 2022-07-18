@@ -5,15 +5,15 @@ import logo from '../assets/images/planet.png';
 const Navbar = () => {
   const activeClassName = 'underline';
   return (
-    <div>
-      <div>
-        <div className="Logo">
-          <img src={logo} alt="planet" />
+    <section className="nav">
+      <div className="logo">
+        <div className="logo-container">
+          <img src={logo} alt="planet" className="logo-container__img" />
           <p>Space Travelers Hub</p>
         </div>
       </div>
-      <nav>
-        <ul className="">
+      <nav className="nav-container">
+        <ul className="nav-container__items">
           <li>
             <NavLink
               to="/rockets"
@@ -30,7 +30,7 @@ const Navbar = () => {
               Missions
             </NavLink>
           </li>
-          <li>
+          <li className="profile">
             <NavLink
               to="/profile"
               className={({ isActive }) => (isActive ? activeClassName : undefined)}
@@ -40,7 +40,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </section>
   );
 };
 
