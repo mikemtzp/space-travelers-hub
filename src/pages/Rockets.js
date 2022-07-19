@@ -1,5 +1,9 @@
+import Rocket from '../components/Rocket';
+
 const Rockets = () => (
-  <div><h1>Hola Rockets</h1></div>
+  <div style={{ padding: '2rem' }}>
+    <Rocket />
+  </div>
 );
 
 export default Rockets;

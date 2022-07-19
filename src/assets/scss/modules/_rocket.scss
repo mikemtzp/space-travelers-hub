@@ -1,0 +1,44 @@
+@import './mixins';
+
+.rocket-container {
+  display: flex;
+
+  &__img {
+    width: 18%;
+  }
+}
+
+.rocket-info {
+  padding: 0 1rem;
+
+  @include flex-pos(column, start);
+
+  align-items: start;
+
+  &__title {
+    @include titleStyle($roboto, 700);
+
+    font-size: 1.8rem;
+  }
+
+  &__description {
+    @include titleStyle($roboto, 400);
+
+    color: $typoColor;
+    font-size: 1.1rem;
+  }
+
+  &__button {
+    color: #fff;
+    background-color: $primaryColor;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+.rocket-info > * {
+  margin-bottom: 1rem;
+}
