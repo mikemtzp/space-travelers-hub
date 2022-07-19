@@ -1,0 +1,52 @@
+@import './mixins';
+
+.underline {
+  text-decoration: underline;
+}
+
+.profile {
+  &::before {
+    content: '|';
+    margin-right: 1rem;
+  }
+}
+
+.nav {
+  @include flex-pos(row, flex-end);
+
+  border-bottom: 1px solid transparentize($web-gray, 0.8);
+  position: relative;
+
+  &-container {
+    padding: 1rem 10%;
+
+    &__items > * {
+      display: inline-block;
+      padding: 0.5rem;
+      color: $primaryColor;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.logo {
+  margin-right: auto;
+
+  &-container {
+    @include flex-pos(row, center);
+
+    p {
+      @include titleStyle($roboto, 700);
+
+      font-size: 3rem;
+      margin-right: 1rem;
+    }
+
+    width: 100%;
+    padding: 1rem 10%;
+
+    &__img {
+      width: 4rem;
+    }
+  }
+}
