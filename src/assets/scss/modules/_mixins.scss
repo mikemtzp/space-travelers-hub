@@ -5,7 +5,6 @@ $web-gray: #6d757d;
 $leave-mission: #dc3645;
 $roboto: 'Roboto', sans-serif;
 
-
 @mixin flex-pos($pos, $justify) {
   display: flex;
   flex-direction: $pos;
