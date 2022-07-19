@@ -10,16 +10,20 @@
 
 .rocket-info {
   padding: 0 1rem;
+
   @include flex-pos(column, start);
+
   align-items: start;
 
   &__title {
     @include titleStyle($roboto, 700);
+
     font-size: 1.8rem;
   }
 
   &__description {
     @include titleStyle($roboto, 400);
+
     color: $typoColor;
     font-size: 1.1rem;
   }
