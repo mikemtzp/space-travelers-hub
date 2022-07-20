@@ -1,5 +1,10 @@
+import MissionTable from '../components/MissionTable';
+
 const Missions = () => (
-  <div><h1>Hola Mision</h1></div>
+  <section>
+    <MissionTable />
+
+  </section>
 );
 
 export default Missions;
