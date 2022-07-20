@@ -10,9 +10,9 @@ const createTable = (data) => {
   keys.forEach((mission) => {
     missions.push(
       {
-        id: mission.mission_id,
-        name: mission.mission_name,
-        description: mission.description,
+        id: data[mission].mission_id,
+        name: data[mission].mission_name,
+        description: data[mission].description,
       },
     );
   });
