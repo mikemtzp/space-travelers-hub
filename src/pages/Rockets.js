@@ -7,7 +7,7 @@ const Rockets = () => {
   const rocketList = Object.keys(rockets);
 
   return (
-    <ul style={{ padding: '2rem' }}>
+    <ul style={{ padding: '2rem 4rem' }}>
       {
         rocketList ? rocketList.map((rocket) => (
           <Rocket
