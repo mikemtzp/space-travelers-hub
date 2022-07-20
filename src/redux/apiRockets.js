@@ -5,16 +5,16 @@ const apiUrl = 'https://api.spacexdata.com/v3/rockets';
 const rocketList = (object) => {
   let rocketData = {};
 
-  object.forEach((rocket) => {
+  object.forEach((item) => {
     rocketData = {
       ...rocketData,
-      [rocket.id]:
+      [item.id]:
       {
-        name: rocket.rocket_name,
-        description: rocket.description,
-        image: rocket.flickr_images[0],
+        name: item.rocket_name,
+        description: item.description,
+        image: item.flickr_images[0],
         reserved: false,
-        id: rocket.id,
+        id: item.id,
       },
     };
   });
@@ -24,7 +24,7 @@ const rocketList = (object) => {
 const getRockets = createAsyncThunk(
   'rockets/getRockets',
   async () => {
-    const response = fetch(apiUrl, {
+    const response = await fetch(apiUrl, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

@@ -2,18 +2,20 @@
 
 .rocket-container {
   display: flex;
+  margin-bottom: 1rem;
 
   &__img {
-    width: 18%;
+    width: 20%;
+    height: 18%;
   }
 }
 
 .rocket-info {
   padding: 0 1rem;
 
-  @include flex-pos(column, start);
+  @include flex-pos(column, flex-start);
 
-  align-items: start;
+  align-items: flex-start;
 
   &__title {
     @include titleStyle($roboto, 700);
