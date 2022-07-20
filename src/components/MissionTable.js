@@ -5,26 +5,18 @@ const MissionTable = (props) => {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>{' '}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="mission">
-            <td id={id} className="mission-name">{name}</td>
-            <td className="mission-description">
-              {description}
-            </td>
-            <td>NOT A MEMBER</td>
-            <td><button type="button">Join Mission</button></td>
-          </tr>
-        </tbody>
-      </table>
+
+      <tbody>
+        <tr className="mission">
+          <td id={id} className="mission-name">{name}</td>
+          <td className="mission-description">
+            {description}
+          </td>
+          <td>NOT A MEMBER</td>
+          <td><button type="button">Join Mission</button></td>
+        </tr>
+      </tbody>
+
     </>
   );
 };

@@ -26,9 +26,11 @@ tbody {
   .mission-name {
     font-size: 1.2rem;
     font-weight: bold;
+    vertical-align: top;
+    text-align: left;
   }
 
   .mission-description {
-    width: 75%;
+    width: 65%;
   }
 }

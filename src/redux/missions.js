@@ -1,18 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
+import getMissions from './apiMissions';
 
 const initialState = {
   missions: [],
-  loading: false,
+  status: null,
 };
 
 const reducer = createSlice({
   name: 'missions',
   initialState,
-  reducers: {
-    setMissions: (state, action) => ({
+  extraReducers: {
+    [getMissions.pending]: (state) => ({
+      ...state,
+      status: 'loading',
+    }),
+    [getMissions.fulfilled]: (state, action) => ({
       ...state,
       missions: action.payload,
-
+      status: 'success',
+    }),
+    [getMissions.rejected]: (state) => ({
+      ...state,
+      loading: 'something went wrong',
     }),
   },
 });
