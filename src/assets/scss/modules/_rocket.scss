@@ -28,12 +28,33 @@
 
     color: $typoColor;
     font-size: 1.1rem;
+    line-height: 1.5rem;
+    height: 4rem;
+
+    &__reserved {
+      background-color: $secondaryColor;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.2rem;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
   }
 
-  &__button {
+  &__cancelbutton {
+    color: $web-gray;
+    background-color: #fff;
+    border: 1px solid $typoColor;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  &__reservebutton {
     color: #fff;
     background-color: $primaryColor;
-    border: none;
+    border: 1px solid $primaryColor;
     padding: 0.5rem;
     border-radius: 3px;
     font-size: 1rem;
