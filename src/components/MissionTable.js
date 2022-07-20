@@ -1,36 +1,30 @@
-const MissionTable = () => (
-  <>
-    <table>
-      <thead>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>{' '}</th>
-        </tr>
-      </thead>
+import PropTypes from 'prop-types';
+
+const MissionTable = (props) => {
+  const { id, name, description } = props;
+
+  return (
+    <>
+
       <tbody>
         <tr className="mission">
-          <td className="mission-name">Iridium Next</td>
+          <td id={id} className="mission-name">{name}</td>
           <td className="mission-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id facilisis lacus,
-            eu euismod lacus. Donec viverra elementum feugiat. In posuere felis quam, id tempus
-            magna viverra in. Quisque luctus lectus nisl, a lacinia diam porttitor ut. Aliquam
-            volutpat nisl non nulla mollis, at molestie erat ornare. Fusce in lacinia eros,
-            id iaculis ante. In convallis in ipsum sed feugiat. Morbi quis velit ipsum. Phasellus
-            lacinia, magna non accumsan malesuada, quam nisi venenatis velit,
-            pulvinar sollicitudin
-            felis nisl malesuada lorem. Praesent augue leo, rutrum nec mi id,
-            lacinia tincidunt erat. Curabitur tincidunt elit semper, fermentum ligula id,
-            porta nibh.
-
+            {description}
           </td>
           <td>NOT A MEMBER</td>
           <td><button type="button">Join Mission</button></td>
         </tr>
       </tbody>
-    </table>
-  </>
-);
+
+    </>
+  );
+};
+
+MissionTable.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default MissionTable;
