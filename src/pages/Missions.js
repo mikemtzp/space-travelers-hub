@@ -30,6 +30,7 @@ const Missions = () => {
             id={mission.id}
             name={mission.name}
             description={mission.description}
+            joined={mission.joined}
           />
         ))
           : <p>No missions found</p>}
