@@ -1,10 +1,12 @@
 import MissionTable from '../components/MissionTable';
 
-const Missions = () => (
-  <section>
-    <MissionTable />
+const Missions = () => {
+  const { missions } = useSelector((state) => state.missions);
+  return (
+    <section>
+      <MissionTable />
 
-  </section>
-);
-
+    </section>
+  );
+};
 export default Missions;
