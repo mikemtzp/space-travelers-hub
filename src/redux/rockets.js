@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import getRockets from './apiRockets';
 
 const initialState = {
   rockets: [],
 };
 
-const reducer = createSlice({
+const rockets = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
@@ -14,12 +15,27 @@ const reducer = createSlice({
         ...state.rockets,
         [action.payload]: {
           ...state.rockets[action.payload],
-          reserverd: !state.rockets[action.payload].reserved,
+          reserved: !state.rockets[action.payload].reserved,
         },
       },
     }),
   },
+  extraReducers: {
+    [getRockets.pending]: (state) => ({
+      ...state,
+      status: 'loading',
+    }),
+    [getRockets.fulfilled]: (state, action) => ({
+      ...state,
+      status: 'success',
+      rockets: action.payload,
+    }),
+    [getRockets.rejected]: (state) => ({
+      ...state,
+      status: 'failed',
+    }),
+  },
 });
 
-export const { updateRocket } = reducer.actions;
-export default reducer;
+export const { updateRocket } = rockets.actions;
+export default rockets;
