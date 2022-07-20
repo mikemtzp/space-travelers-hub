@@ -11,7 +11,7 @@ const reducer = createSlice({
   initialState,
   reducers: {
     setStatus: (state, action) => {
-      const newArray = state.missions.map((mission) => {
+      const newState = state.missions.map((mission) => {
         if (mission.id === action.payload) {
           return {
             ...mission,
@@ -20,7 +20,7 @@ const reducer = createSlice({
         }
         return mission;
       });
-      return { ...state, missions: newArray };
+      return { ...state, missions: newState };
     },
   },
 
