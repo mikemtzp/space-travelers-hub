@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Rockets from './pages/Rockets';
 import Missions from './pages/Missions';
 import MyProfile from './pages/MyProfile';
+import getMissions from './redux/apiMissions';
 
 import './assets/scss/App.scss';
 
@@ -14,6 +15,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getRockets());
+    dispatch(getMissions());
   }, []);
 
   return (

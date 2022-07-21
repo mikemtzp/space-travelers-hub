@@ -9,6 +9,21 @@ const initialState = {
 const reducer = createSlice({
   name: 'missions',
   initialState,
+  reducers: {
+    setStatus: (state, action) => {
+      const newState = state.missions.map((mission) => {
+        if (mission.id === action.payload) {
+          return {
+            ...mission,
+            joined: !mission.joined,
+          };
+        }
+        return mission;
+      });
+      return { ...state, missions: newState };
+    },
+  },
+
   extraReducers: {
     [getMissions.pending]: (state) => ({
       ...state,
@@ -26,5 +41,5 @@ const reducer = createSlice({
   },
 });
 
-export const { setMissions } = reducer.actions;
+export const { setStatus } = reducer.actions;
 export default reducer;
