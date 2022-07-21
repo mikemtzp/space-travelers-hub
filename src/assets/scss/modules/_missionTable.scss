@@ -19,6 +19,7 @@ thead {
 
 tbody {
   @include titleStyle($roboto, 400);
+
   td {
     padding: 1rem 12px;
     border: 1px solid $web-gray;
@@ -29,6 +30,7 @@ tbody {
     font-weight: bold;
     vertical-align: top;
     text-align: left;
+
     @include titleStyle($roboto, 700);
   }
 
@@ -36,6 +38,7 @@ tbody {
     width: 55%;
     font-size: 0.95rem;
   }
+
   .mission-member > p {
     text-align: center;
     background-color: #18a2b8;
@@ -45,6 +48,7 @@ tbody {
     margin-right: 0.5rem;
     font-size: 0.8rem;
   }
+
   .mission-not-member > p {
     text-align: center;
     background-color: $web-gray;
@@ -60,9 +64,8 @@ tbody:nth-child(even) {
   background-color: transparentize($web-gray, 0.8);
 }
 
-.button-container{
+.button-container {
   text-align: center;
-  vertical-align: center;
   width: 10%;
 
   &__join-button {
@@ -74,6 +77,7 @@ tbody:nth-child(even) {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+
     &:hover {
       background-color: $secondaryColor;
       border: 1px solid $secondaryColor;
