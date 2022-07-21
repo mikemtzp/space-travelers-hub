@@ -18,8 +18,16 @@ const MissionTable = (props) => {
           <td className="mission-description">
             {description}
           </td>
-          <td>{!joined ? 'Not a member' : 'Member'}</td>
-          <td><button onClick={() => dispatch(setStatus(id))} type="button">{!joined ? 'Join Mission' : 'Leave Mission'}</button></td>
+          <td className={!joined ? 'mission-not-member' : 'mission-member'}><p>{!joined ? 'NOT A MEMBER' : 'MEMBER'}</p></td>
+          <td className="button-container">
+            <button
+              className={!joined ? 'button-container__join-button' : 'button-container__leave-button'}
+              onClick={() => dispatch(setStatus(id))}
+              type="button"
+            >
+              {!joined ? 'Join Mission' : 'Leave Mission'}
+            </button>
+          </td>
         </tr>
       </tbody>
     </>
