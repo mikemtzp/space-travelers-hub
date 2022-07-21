@@ -13,6 +13,7 @@ const createTable = (data) => {
         id: data[mission].mission_id,
         name: data[mission].mission_name,
         description: data[mission].description,
+        joined: false,
       },
     );
   });

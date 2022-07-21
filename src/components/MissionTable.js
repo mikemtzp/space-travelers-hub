@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux/es/exports';
+import { setStatus } from '../redux/missions';
 
 const MissionTable = (props) => {
-  const { id, name, description } = props;
+  const dispatch = useDispatch();
+
+  const {
+    id, name, description, joined,
+  } = props;
 
   return (
     <>
@@ -12,11 +18,18 @@ const MissionTable = (props) => {
           <td className="mission-description">
             {description}
           </td>
-          <td>NOT A MEMBER</td>
-          <td><button type="button">Join Mission</button></td>
+          <td className={!joined ? 'mission-not-member' : 'mission-member'}><p>{!joined ? 'NOT A MEMBER' : 'MEMBER'}</p></td>
+          <td className="button-container">
+            <button
+              className={!joined ? 'button-container__join-button' : 'button-container__leave-button'}
+              onClick={() => dispatch(setStatus(id))}
+              type="button"
+            >
+              {!joined ? 'Join Mission' : 'Leave Mission'}
+            </button>
+          </td>
         </tr>
       </tbody>
-
     </>
   );
 };
@@ -25,6 +38,7 @@ MissionTable.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  joined: PropTypes.bool.isRequired,
 };
 
 export default MissionTable;

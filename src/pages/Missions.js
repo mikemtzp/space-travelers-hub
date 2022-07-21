@@ -1,17 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import MissionTable from '../components/MissionTable';
-import getMissions from '../redux/apiMissions';
 
 const Missions = () => {
   const { missions } = useSelector((state) => state.missions);
-  const dispatch = useDispatch();
   const missionList = Object.values(missions);
-  useEffect(
-    () => {
-      dispatch(getMissions());
-    }, [],
-  );
 
   return (
     <section>
@@ -30,6 +22,7 @@ const Missions = () => {
             id={mission.id}
             name={mission.name}
             description={mission.description}
+            joined={mission.joined}
           />
         ))
           : <p>No missions found</p>}
