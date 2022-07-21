@@ -20,6 +20,7 @@ const rockets = createSlice({
       },
     }),
   },
+
   extraReducers: {
     [getRockets.pending]: (state) => ({
       ...state,
