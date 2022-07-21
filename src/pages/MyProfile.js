@@ -3,8 +3,11 @@ import { useSelector } from 'react-redux';
 
 const MyProfile = () => {
   const { rockets } = useSelector((state) => state.rockets);
+  const { missions } = useSelector((state) => state.missions);
   const rocketList = Object.keys(rockets);
+  const missionList = Object.keys(missions);
   const reservedRockets = [];
+  const joinedMissions = [];
 
   if (rocketList.length) {
     rocketList.forEach((item) => {
@@ -16,10 +19,6 @@ const MyProfile = () => {
       }
     });
   }
-
-  const { missions } = useSelector((state) => state.missions);
-  const missionList = Object.keys(missions);
-  const joinedMissions = [];
 
   if (missionList.length) {
     missionList.forEach((item) => {
