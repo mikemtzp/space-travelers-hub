@@ -17,27 +17,50 @@ const MyProfile = () => {
     });
   }
 
-  return (
-    <div className="mycontainer">
-      <div className="mycontainer-section">
-        <h2 className="mycontainer-section__title">
-          My Missions
-        </h2>
+  const { missions } = useSelector((state) => state.missions);
+  const missionList = Object.keys(missions);
+  const joinedMissions = [];
+
+  if (missionList.length) {
+    missionList.forEach((item) => {
+      if (missions[item].joined) {
+        joinedMissions.push({
+          id: joinedMissions.length + 1,
+          name: missions[item].name,
+        });
+      }
+    });
+
+    return (
+      <div className="mycontainer">
+        <div className="mycontainer-section">
+          <h2 className="mycontainer-section__title">
+            My Missions
+          </h2>
+          <ul className="mycontainer-section__box">
+            {
+              joinedMissions.length ? joinedMissions.map((item) => (
+                <li key={item.id} className="element-name">{item.name}</li>
+              )) : <li className="element-name">No Missions Ongoing</li>
+            }
+          </ul>
+        </div>
+        <div className="mycontainer-section">
+          <h2 className="mycontainer-section__title">
+            My Rockets
+          </h2>
+          <ul className="mycontainer-section__box">
+            {
+              reservedRockets.length ? reservedRockets.map((item) => (
+                <li key={item.id} className="element-name">{item.name}</li>
+              )) : <li className="element-name">No rockets selected</li>
+            }
+          </ul>
+        </div>
       </div>
-      <div className="mycontainer-section">
-        <h2 className="mycontainer-section__title">
-          My Rockets
-        </h2>
-        <ul className="mycontainer-section__box">
-          {
-            reservedRockets.length ? reservedRockets.map((item) => (
-              <li key={item.id} className="element-name">{item.name}</li>
-            )) : <li className="element-name">No rockets selected</li>
-          }
-        </ul>
-      </div>
-    </div>
-  );
+    );
+  }
+  return false;
 };
 
 export default MyProfile;

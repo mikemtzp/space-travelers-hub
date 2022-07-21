@@ -18,6 +18,8 @@ thead {
 }
 
 tbody {
+  @include titleStyle($roboto, 400);
+
   td {
     padding: 1rem 12px;
     border: 1px solid $web-gray;
@@ -28,9 +30,67 @@ tbody {
     font-weight: bold;
     vertical-align: top;
     text-align: left;
+
+    @include titleStyle($roboto, 700);
   }
 
   .mission-description {
-    width: 65%;
+    width: 55%;
+    font-size: 0.95rem;
+  }
+
+  .mission-member > p {
+    text-align: center;
+    background-color: #18a2b8;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0.2rem;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .mission-not-member > p {
+    text-align: center;
+    background-color: $web-gray;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0.2rem;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+tbody:nth-child(even) {
+  background-color: transparentize($web-gray, 0.8);
+}
+
+.button-container {
+  text-align: center;
+  width: 10%;
+
+  &__join-button {
+    color: #fff;
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $secondaryColor;
+      border: 1px solid $secondaryColor;
+    }
+  }
+
+  &__leave-button {
+    color: $web-gray;
+    background-color: #fff;
+    border: 1px solid $typoColor;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
   }
 }
