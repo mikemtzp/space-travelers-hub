@@ -107,73 +107,9 @@ exports[`Renders page Components Renders My Profile component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <div
-        class="mycontainer"
-      >
-        <div
-          class="mycontainer-section"
-        >
-          <h2
-            class="mycontainer-section__title"
-          >
-            My Missions
-          </h2>
-        </div>
-        <div
-          class="mycontainer-section"
-        >
-          <h2
-            class="mycontainer-section__title"
-          >
-            My Rockets
-          </h2>
-          <ul
-            class="mycontainer-section__box"
-          >
-            <li
-              class="element-name"
-            >
-              No rockets selected
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <div />
   </body>,
-  "container": <div>
-    <div
-      class="mycontainer"
-    >
-      <div
-        class="mycontainer-section"
-      >
-        <h2
-          class="mycontainer-section__title"
-        >
-          My Missions
-        </h2>
-      </div>
-      <div
-        class="mycontainer-section"
-      >
-        <h2
-          class="mycontainer-section__title"
-        >
-          My Rockets
-        </h2>
-        <ul
-          class="mycontainer-section__box"
-        >
-          <li
-            class="element-name"
-          >
-            No rockets selected
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>,
+  "container": <div />,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
