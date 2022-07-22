@@ -1,0 +1,18 @@
+$primaryColor: #007bff;
+$secondaryColor: #18a2b8;
+$typoColor: #212529;
+$web-gray: #6d757d;
+$leave-mission: #dc3645;
+$roboto: 'Roboto', sans-serif;
+
+@mixin flex-pos($pos, $justify) {
+  display: flex;
+  flex-direction: $pos;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin titleStyle($font, $weight) {
+  font-family: $font;
+  font-weight: $weight;
+}
