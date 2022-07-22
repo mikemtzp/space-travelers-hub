@@ -6,9 +6,10 @@
 - React.js
 - Redux
 - Babel
+- Testing Library
 - Linters: Stylelint & ESlint
 
-## 💻 [Live demo]()
+## 💻 [Live demo](https://spacetravelers-hub.netlify.app/)
 
 ## 🧮 Prerequisites
 
